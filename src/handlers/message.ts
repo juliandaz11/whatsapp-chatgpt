@@ -131,6 +131,14 @@ async function handleIncomingMessage(message: Message) {
 		return;
 	}
 
+    // UserConfig (!uconfig <args>)
+    if (startsWithIgnoreCase(messageString, config.userConfigPrefix)) {
+    	const prompt = messageString.substring(config.userConfigPrefix.length + 1);
+    	await handleMessageAIConfig(message, prompt);
+    	return;
+    }
+
+
 	// GPT (!gpt <prompt>)
 	if (startsWithIgnoreCase(messageString, config.gptPrefix)) {
 		const prompt = messageString.substring(config.gptPrefix.length + 1);

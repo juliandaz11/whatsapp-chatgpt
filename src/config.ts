@@ -28,6 +28,7 @@ interface IConfig {
 	langChainPrefix: string;
 	resetPrefix: string;
 	aiConfigPrefix: string;
+	userConfigPrefix: string;
 
 	// Groupchats
 	groupchatsEnabled: boolean;
@@ -72,6 +73,7 @@ export const config: IConfig = {
 	stableDiffusionPrefix: process.env.STABLE_DIFFUSION_PREFIX || "!sd", // Default: !sd
 	resetPrefix: process.env.RESET_PREFIX || "!reset", // Default: !reset
 	aiConfigPrefix: process.env.AI_CONFIG_PREFIX || "!config", // Default: !config
+	userConfigPrefix: process.env.USER_CONFIG_PREFIX || "!uconfig", // Default: !uconfig
 	langChainPrefix: process.env.LANGCHAIN_PREFIX || "!lang", // Default: !lang
 
 	// Groupchats
